@@ -2,6 +2,9 @@
 
 public class Pipes : MonoBehaviour
 {
+    public Transform top;
+    public Transform bottom;
+
     public float speed = 5f;
     private float leftEdge;
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6053768793515663628}
   - component: {fileID: 6053768793515663631}
   m_Layer: 0
-  m_Name: Pipe
+  m_Name: Bottom Pipe
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6053768794356161904}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6053768793515663628
 SpriteRenderer:
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 6053768794093319261}
   - component: {fileID: 6053768794093319260}
   m_Layer: 0
-  m_Name: Pipe
+  m_Name: Top Pipe
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,7 +138,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6053768794356161904}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!212 &6053768794093319261
 SpriteRenderer:
@@ -244,9 +244,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 6053768794093319263}
   - {fileID: 5842982242925327011}
   - {fileID: 6053768793515663630}
-  - {fileID: 6053768794093319263}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -262,6 +262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf73fc57bf8b3384fb060c245c743cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  top: {fileID: 6053768794093319263}
+  bottom: {fileID: 6053768793515663630}
   speed: 5
 --- !u!1 &7818968135391167135
 GameObject:
@@ -274,7 +276,7 @@ GameObject:
   - component: {fileID: 5842982242925327011}
   - component: {fileID: 599286905869001638}
   m_Layer: 0
-  m_Name: Scoring
+  m_Name: Scoring Zone
   m_TagString: Scoring
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -292,7 +294,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6053768794356161904}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &599286905869001638
 BoxCollider2D:
