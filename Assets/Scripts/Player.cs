@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -47,7 +47,9 @@ public class Player : MonoBehaviour
             spriteIndex = 0;
         }
 
-        spriteRenderer.sprite = sprites[spriteIndex];
+        if (spriteIndex < sprites.Length && spriteIndex >= 0) {
+            spriteRenderer.sprite = sprites[spriteIndex];
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
