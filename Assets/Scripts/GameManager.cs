@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     public GameObject playButton;
     public GameObject gameOver;
-    private int score;
+    public int score { get; private set; }
 
     private void Awake()
     {
