@@ -584,6 +584,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 477a76ff29832b2499b9244de7070326, type: 3}
   strength: 5
   gravity: -9.81
+  tilt: 5
 --- !u!1 &892178073
 GameObject:
   m_ObjectHideFlags: 0
