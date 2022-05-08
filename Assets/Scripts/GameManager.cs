@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Player player;
+    private Player player;
+    private Spawner spawner;
+
     public Text scoreText;
     public GameObject playButton;
     public GameObject gameOver;
@@ -12,6 +14,9 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Application.targetFrameRate = 60;
+
+        player = FindObjectOfType<Player>();
+        spawner = FindObjectOfType<Spawner>();
 
         Pause();
     }
