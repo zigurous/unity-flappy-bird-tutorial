@@ -2,15 +2,14 @@
 
 public class Player : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
-    private int spriteIndex;
-
     public float strength = 5f;
     public float gravity = -9.81f;
     public float tilt = 5f;
 
+    private SpriteRenderer spriteRenderer;
     private Vector3 direction;
+    private int spriteIndex;
 
     private void Awake()
     {
@@ -62,9 +61,9 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Obstacle")) {
-            FindObjectOfType<GameManager>().GameOver();
+            GameManager.Instance.GameOver();
         } else if (other.gameObject.CompareTag("Scoring")) {
-            FindObjectOfType<GameManager>().IncreaseScore();
+            GameManager.Instance.IncreaseScore();
         }
     }
 

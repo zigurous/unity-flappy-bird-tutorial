@@ -3,22 +3,29 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private Player player;
-    private Spawner spawner;
+    public static GameManager Instance { get; private set; }
 
-    public Text scoreText;
-    public GameObject playButton;
-    public GameObject gameOver;
-    public int score { get; private set; }
+    [SerializeField] private Player player;
+    [SerializeField] private Text scoreText;
+    [SerializeField] private GameObject playButton;
+    [SerializeField] private GameObject gameOver;
+
+    private int score;
+    public int Score => score;
 
     private void Awake()
     {
-        Application.targetFrameRate = 60;
-
-        player = FindObjectOfType<Player>();
-        spawner = FindObjectOfType<Spawner>();
-
-        Pause();
+        if (Instance != null)
+        {
+            DestroyImmediate(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            Application.targetFrameRate = 60;
+            DontDestroyOnLoad(gameObject);
+            Pause();
+        }
     }
 
     public void Play()

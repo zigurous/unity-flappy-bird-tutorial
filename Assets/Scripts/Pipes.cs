@@ -4,8 +4,8 @@ public class Pipes : MonoBehaviour
 {
     public Transform top;
     public Transform bottom;
-
     public float speed = 5f;
+
     private float leftEdge;
 
     private void Start()
@@ -15,7 +15,7 @@ public class Pipes : MonoBehaviour
 
     private void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        transform.position += speed * Time.deltaTime * Vector3.left;
 
         if (transform.position.x < leftEdge) {
             Destroy(gameObject);

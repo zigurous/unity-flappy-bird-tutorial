@@ -2,8 +2,8 @@
 
 public class Parallax : MonoBehaviour
 {
-    private MeshRenderer meshRenderer;
     public float animationSpeed = 1f;
+    private MeshRenderer meshRenderer;
 
     private void Awake()
     {
