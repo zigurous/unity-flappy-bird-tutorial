@@ -271,6 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 527830928}
+  spawner: {fileID: 2105631072}
   scoreText: {fileID: 1474871343}
   playButton: {fileID: 892178073}
   gameOver: {fileID: 298509898}
@@ -1111,7 +1112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374f7314a96d6a04d91aa0f1f644322b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6053768794356161907, guid: c1db09ac3ccffc742bbc907d839e8f3a, type: 3}
+  prefab: {fileID: -5845766125972383839, guid: c1db09ac3ccffc742bbc907d839e8f3a, type: 3}
   spawnRate: 1
   minHeight: -1
   maxHeight: 2
+  verticalGap: 3
