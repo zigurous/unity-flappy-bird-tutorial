@@ -12,22 +12,33 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject playButton;
     [SerializeField] private GameObject gameOver;
 
-    private int score;
-    public int Score => score;
+    public int score { get; private set; }
 
     private void Awake()
     {
-        if (Instance != null)
-        {
+        if (Instance != null) {
             DestroyImmediate(gameObject);
-        }
-        else
-        {
+        } else {
             Instance = this;
-            Application.targetFrameRate = 60;
-            DontDestroyOnLoad(gameObject);
-            Pause();
         }
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this) {
+            Instance = null;
+        }
+    }
+
+    private void Start()
+    {
+        Pause();
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+        player.enabled = false;
     }
 
     public void Play()
@@ -54,12 +65,6 @@ public class GameManager : MonoBehaviour
         gameOver.SetActive(true);
 
         Pause();
-    }
-
-    public void Pause()
-    {
-        Time.timeScale = 0f;
-        player.enabled = false;
     }
 
     public void IncreaseScore()
