@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject playButton;
     [SerializeField] private GameObject gameOver;
 
-    public int score { get; private set; }
+    public int score { get; private set; } = 0;
 
     private void Awake()
     {
